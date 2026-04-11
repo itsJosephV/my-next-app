@@ -24,7 +24,7 @@ export default async function Home() {
       <form
         action={async () => {
           "use server";
-          await signOut();
+          await signOut({ redirectTo: "/" });
         }}
       >
         <button type="submit">Sign out</button>
