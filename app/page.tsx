@@ -20,11 +20,14 @@ export default async function Home() {
 
   return (
     <div>
-      <p>Welcome, {session.user?.name}</p>
-      <p>Email: {session.user?.email}</p>
-      <form action={logout}>
-        <SubmitButton label="Sign out" loadingLabel="Signing out..." />
-      </form>
+      <p className="text-sm text-white/60">
+        You are logged in as {session.user?.name}
+      </p>
+      <div className="mt-6">
+        <form action={logout}>
+          <SubmitButton label="Sign out" loadingLabel="Signing out..." />
+        </form>
+      </div>
     </div>
   );
 }

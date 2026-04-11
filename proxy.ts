@@ -1,7 +1,14 @@
 import { auth } from "@/auth/auth";
-import type { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export function proxy(request: NextRequest) {
+export async function proxy(request: NextRequest) {
+  const session = await auth();
+  const { pathname } = request.nextUrl;
+
+  if (pathname.startsWith("/auth") && !session) {
+    return NextResponse.redirect(new URL("/", request.url));
+  }
+
   return auth(request as never);
 }
 
