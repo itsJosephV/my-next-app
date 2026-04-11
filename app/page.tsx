@@ -18,7 +18,20 @@ export default async function Home() {
     );
   }
   return (
+    // <div>
+    //   <p>Welcome, {session.user?.name}</p>
+    //   <p>Email: {session.user?.email}</p>
+    //   <form
+    //     action={async () => {
+    //       "use server";
+    //       await signOut({ redirectTo: "/" });
+    //     }}
+    //   >
+    //     <button type="submit">Sign out</button>
+    //   </form>
+    // </div>
     <div>
+      <pre>{JSON.stringify(session, null, 2)}</pre>
       <p>Welcome, {session.user?.name}</p>
       <p>Email: {session.user?.email}</p>
       <form
