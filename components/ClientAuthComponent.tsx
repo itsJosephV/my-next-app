@@ -1,16 +1,19 @@
 "use client";
 
 import { useSession } from "next-auth/react";
+import { DashboardSkeleton } from "@/components/skeletons/dashboard-skeleton";
 
-const ClientAuthComponent = () => {
+export function ClientAuthComponent() {
   const { data: session, status } = useSession();
+
+  if (status === "loading") {
+    return <DashboardSkeleton />;
+  }
+
   return (
-    <div className="bg-blue-950 max-w-fit text-blue-300 p-4 rounded-md space-y-2">
+    <div>
+      <p>Nombre: {session?.user?.name}</p>
       <p>Email: {session?.user?.email}</p>
-      <p>this is inside a client component</p>
-      <p>Status: {status}</p>
     </div>
   );
-};
-
-export default ClientAuthComponent;
+}

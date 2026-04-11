@@ -5,7 +5,7 @@ export async function DashboardContent() {
 
   return (
     <div>
-      <h1 className="text-3xl font-semibold tracking-tight">Dashboard</h1>
+      {/* <h1 className="text-3xl font-semibold tracking-tight">Dashboard</h1> */}
       <div className="mt-6 text-white/60 text-sm">
         <p>Nombre: {session?.user?.name}</p>
         <p>Email: {session?.user?.email}</p>
