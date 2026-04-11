@@ -3,6 +3,7 @@ import type { Posts } from "@/types";
 export default async function Home() {
   const data = await fetch(
     "https://67bf1a03b2320ee050129b6f.mockapi.io/v1/posts",
+    { cache: "no-store" },
   );
   const posts = (await data.json()) as Posts;
 
