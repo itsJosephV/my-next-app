@@ -1,33 +1,23 @@
-import { login } from "@/actions/auth/login";
-import { logout } from "@/actions/auth/logout";
-
 import { auth } from "@/auth/auth";
-import { SubmitButton } from "@/components/SubmitButton";
 
 export default async function Home() {
   const session = await auth();
-
-  if (!session) {
-    return (
-      <form action={login}>
-        <SubmitButton
-          label="Sign in with Microsoft"
-          loadingLabel="Signing in..."
-        />
-      </form>
-    );
-  }
+  const userName = session?.user?.name || "there";
 
   return (
-    <div>
-      <p className="text-sm text-white/60">
-        You are logged in as {session.user?.name}
+    <div className="max-w-2xl">
+      <h1 className="text-4xl font-bold mb-6">
+        Welcome{session ? `, ${userName}` : ""}! 👋
+      </h1>
+      <p className="text-lg text-white/70 mb-4">
+        This is your home page. You can navigate to the dashboard to see more
+        features.
       </p>
-      <div className="mt-6">
-        <form action={logout}>
-          <SubmitButton label="Sign out" loadingLabel="Signing out..." />
-        </form>
-      </div>
+      <p className="text-white/60">
+        {session
+          ? `You are logged in as ${session.user.email}. Explore the dashboard or sign out from the navigation.`
+          : "Sign in from the navigation to access your dashboard."}
+      </p>
     </div>
   );
 }

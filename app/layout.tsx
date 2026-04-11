@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { SessionProvider } from "next-auth/react";
-import Link from "next/link";
+import Navbar from "@/components/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,15 +31,7 @@ export default function RootLayout({
     >
       <body className="min-h-screen">
         <SessionProvider>
-          <header className="p-5 bg-blue-950 text-blue-300">
-            <div className="flex items-center justify-between">
-              <h1>My App</h1>
-              <nav className="flex gap-5">
-                <Link href="/">Home</Link>
-                <Link href="/auth/dashboard">Dashboard</Link>
-              </nav>
-            </div>
-          </header>
+          <Navbar />
           <main className="p-5">{children}</main>
         </SessionProvider>
       </body>
