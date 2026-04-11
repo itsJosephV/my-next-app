@@ -1,46 +1,29 @@
-import { auth, signIn, signOut } from "@/auth/auth";
+import { login } from "@/actions/auth/login";
+import { logout } from "@/actions/auth/logout";
+
+import { auth } from "@/auth/auth";
+import { SubmitButton } from "@/components/SubmitButton";
 
 export default async function Home() {
   const session = await auth();
 
   if (!session) {
     return (
-      <form
-        action={async () => {
-          "use server";
-          await signIn("microsoft-entra-id");
-        }}
-      >
-        <button className="bg-blue-700 px-4 py-2 rounded-sm" type="submit">
-          Sign in with Microsoft
-        </button>
+      <form action={login}>
+        <SubmitButton
+          label="Sign in with Microsoft"
+          loadingLabel="Signing in..."
+        />
       </form>
     );
   }
+
   return (
-    // <div>
-    //   <p>Welcome, {session.user?.name}</p>
-    //   <p>Email: {session.user?.email}</p>
-    //   <form
-    //     action={async () => {
-    //       "use server";
-    //       await signOut({ redirectTo: "/" });
-    //     }}
-    //   >
-    //     <button type="submit">Sign out</button>
-    //   </form>
-    // </div>
     <div>
-      <pre>{JSON.stringify(session, null, 2)}</pre>
       <p>Welcome, {session.user?.name}</p>
       <p>Email: {session.user?.email}</p>
-      <form
-        action={async () => {
-          "use server";
-          await signOut({ redirectTo: "/" });
-        }}
-      >
-        <button type="submit">Sign out</button>
+      <form action={logout}>
+        <SubmitButton label="Sign out" loadingLabel="Signing out..." />
       </form>
     </div>
   );
