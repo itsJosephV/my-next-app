@@ -11,7 +11,7 @@ export function ClientAuthComponent() {
   }
 
   return (
-    <div className="text-white/60 text-sm">
+    <div className="text-green-400/60 text-sm">
       <p>Nombre: {session?.user?.name}</p>
       <p>Email: {session?.user?.email}</p>
     </div>
