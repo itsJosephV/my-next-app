@@ -4,15 +4,13 @@ import { DashboardSkeleton } from "@/components/skeletons/dashboard-skeleton";
 
 import { Suspense } from "react";
 
-// import ClientAuthComponent from "@/components/ClientAuthComponent";
-
 const page = () => {
   return (
     <>
       <Suspense fallback={<DashboardSkeleton />}>
         <DashboardContent />
       </Suspense>
-      <section className="mt-12">
+      <section className="mt-6">
         <ClientAuthComponent />
       </section>
     </>
@@ -20,7 +18,3 @@ const page = () => {
 };
 
 export default page;
-
-{
-  /*  */
-}
