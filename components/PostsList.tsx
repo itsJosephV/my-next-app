@@ -23,9 +23,7 @@ const PostsList = async ({}: PostsListProps) => {
           >
             <h3 className="text-xl font-semibold">{post.title}</h3>
             <p className="text-base mt-2">{post.body}</p>
-            <span className="text-sm text-gray-500 mt-2 block">
-              {post.category}
-            </span>
+            <span className="text-sm mt-2 block">{post.category}</span>
           </Link>
         </li>
       ))}

@@ -30,22 +30,19 @@ const PostDetailPage = async ({
 
   return (
     <article className="max-w-2xl">
-      <Link
-        href="/dashboard"
-        className="text-blue-600 hover:text-blue-800 underline mb-6 inline-block"
-      >
+      <Link href="/dashboard" className="mb-6 inline-block">
         ← Back to Dashboard
       </Link>
 
       <header className="mb-8">
         <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
-        <span className="inline-block bg-violet-600 text-white px-3 py-1 rounded text-sm font-semibold">
+        <span className="inline-block bg-violet-100 text-violet-800  px-3 py-1 rounded text-sm font-semibold">
           {post.category}
         </span>
       </header>
 
       <main className="prose max-w-none">
-        <p className="text-lg leading-relaxed text-gray-700">{post.body}</p>
+        <p className="text-lg leading-relaxed">{post.body}</p>
       </main>
     </article>
   );

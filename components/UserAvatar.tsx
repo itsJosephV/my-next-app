@@ -23,9 +23,7 @@ export async function UserAvatar() {
   if (!photo) {
     return (
       <div className="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center">
-        <span className="text-gray-600 font-semibold">
-          {session?.user?.name?.[0]}
-        </span>
+        <span className="font-semibold">{session?.user?.name?.[0]}</span>
       </div>
     );
   }

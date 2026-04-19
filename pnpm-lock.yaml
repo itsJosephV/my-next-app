@@ -8,6 +8,9 @@ dependencies:
   '@base-ui/react':
     specifier: ^1.4.0
     version: 1.4.0(@date-fns/tz@1.4.1)(@types/react@19.2.14)(date-fns@4.1.0)(react-dom@19.2.4)(react@19.2.4)
+  '@hookform/resolvers':
+    specifier: ^3.10.0
+    version: 3.10.0(react-hook-form@7.72.1)
   '@phosphor-icons/react':
     specifier: ^2.1.10
     version: 2.1.10(react-dom@19.2.4)(react@19.2.4)
@@ -32,15 +35,24 @@ dependencies:
   react-dom:
     specifier: 19.2.4
     version: 19.2.4(react@19.2.4)
+  react-hook-form:
+    specifier: ^7.72.1
+    version: 7.72.1(react@19.2.4)
   shadcn:
     specifier: ^4.3.0
     version: 4.3.0(@types/node@20.19.39)(typescript@5.9.3)
+  slugify:
+    specifier: ^1.6.9
+    version: 1.6.9
   tailwind-merge:
     specifier: ^3.5.0
     version: 3.5.0
   tw-animate-css:
     specifier: ^1.4.0
     version: 1.4.0
+  zod:
+    specifier: ^3.25.76
+    version: 3.25.76
 
 devDependencies:
   '@tailwindcss/postcss':
@@ -579,6 +591,14 @@ packages:
       hono: ^4
     dependencies:
       hono: 4.12.14
+    dev: false
+
+  /@hookform/resolvers@3.10.0(react-hook-form@7.72.1):
+    resolution: {integrity: sha512-79Dv+3mDF7i+2ajj7SkypSKHhl1cbln1OGavqrsF7p6mbUv11xpqpacPsGDCTRvCSjEEIez2ef1NveSVL3b0Ag==}
+    peerDependencies:
+      react-hook-form: ^7.0.0
+    dependencies:
+      react-hook-form: 7.72.1(react@19.2.4)
     dev: false
 
   /@humanfs/core@0.19.1:
@@ -4468,6 +4488,15 @@ packages:
       scheduler: 0.27.0
     dev: false
 
+  /react-hook-form@7.72.1(react@19.2.4):
+    resolution: {integrity: sha512-RhwBoy2ygeVZje+C+bwJ8g0NjTdBmDlJvAUHTxRjTmSUKPYsKfMphkS2sgEMotsY03bP358yEYlnUeZy//D9Ig==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18 || ^19
+    dependencies:
+      react: 19.2.4
+    dev: false
+
   /react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: true
@@ -4842,6 +4871,11 @@ packages:
 
   /sisteransi@1.0.5:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
+    dev: false
+
+  /slugify@1.6.9:
+    resolution: {integrity: sha512-vZ7rfeehZui7wQs438JXBckYLkIIdfHOXsaVEUMyS5fHo1483l1bMdo0EDSWYclY0yZKFOipDy4KHuKs6ssvdg==}
+    engines: {node: '>=8.0.0'}
     dev: false
 
   /source-map-js@1.2.1:

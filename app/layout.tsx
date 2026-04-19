@@ -1,20 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Merriweather } from "next/font/google";
+import { Merriweather } from "next/font/google";
 import "./globals.css";
 import { SessionProvider } from "next-auth/react";
-import Navbar from "@/components/Navbar";
 import { cn } from "@/lib/utils";
 
-const merriweather = Merriweather({subsets:['latin'],variable:'--font-serif'});
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const merriweather = Merriweather({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: "--font-serif",
 });
 
 export const metadata: Metadata = {
@@ -30,7 +22,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-serif", merriweather.variable)}
+      className={cn("h-full", "antialiased", merriweather.variable)}
     >
       <body className="min-h-screen">
         <SessionProvider>

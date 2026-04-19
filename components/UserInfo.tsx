@@ -5,7 +5,7 @@ export async function UserInfo() {
 
   return (
     <div>
-      <div className="text-white/60 text-sm">
+      <div className=" text-sm">
         <p>Nombre: {session?.user?.name}</p>
         <p>Email: {session?.user?.email}</p>
       </div>
