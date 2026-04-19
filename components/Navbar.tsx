@@ -9,7 +9,7 @@ export default async function Navbar() {
   const session = await auth();
 
   return (
-    <header className="p-5 bg-blue-950 text-blue-300">
+    <header className="px-5 py-2.5 bg-blue-950 text-blue-300">
       <div className="flex items-center justify-between">
         <Link href="/">
           <h1>My App</h1>
@@ -19,7 +19,7 @@ export default async function Navbar() {
 
           {session ? (
             <>
-              <Link href="/dashboard">Dashboard</Link>
+              {/* <Link href="/dashboard">Dashboard</Link> */}
               <Link href="/posts">Posts</Link>
               <div className="flex items-center gap-3">
                 <Suspense

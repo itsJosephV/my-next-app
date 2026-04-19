@@ -31,8 +31,7 @@ export default function RootLayout({
     >
       <body className="min-h-screen">
         <SessionProvider>
-          <Navbar />
-          <main className="p-5">{children}</main>
+          <main>{children}</main>
         </SessionProvider>
       </body>
     </html>

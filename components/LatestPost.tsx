@@ -8,7 +8,7 @@ const LatestPost = async () => {
   );
   const latestPost = (await data.json())[0] as Post;
   return (
-    <div className="bg-green-950 p-5 max-w-fit">
+    <div className="bg-green-950 max-w-fit">
       <h3 className="text-lg font-semibold">{latestPost.title}</h3>
       <p className="text-base mt-2">{latestPost.body}</p>
     </div>
