@@ -1,13 +1,13 @@
 "use client";
 
 import { useSession } from "next-auth/react";
-import { DashboardSkeleton } from "@/components/skeletons/dashboard-skeleton";
+import { UserInfoSkeleton } from "./skeletons/UserInfoSkeleton";
 
 export function ClientAuthComponent() {
   const { data: session, status } = useSession();
 
   if (status === "loading") {
-    return <DashboardSkeleton />;
+    return <UserInfoSkeleton />;
   }
 
   return (

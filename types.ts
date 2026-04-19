@@ -3,6 +3,7 @@ export type Post = {
   body: string;
   category: string;
   id: number;
+  slug: string;
 }
 
 export type Posts = Post[];

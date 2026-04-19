@@ -1,6 +1,6 @@
 import { auth } from "@/auth/auth";
 
-export async function DashboardContent() {
+export async function UserInfo() {
   const session = await auth();
 
   return (

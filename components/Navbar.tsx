@@ -1,8 +1,7 @@
 import { auth } from "@/auth/auth";
 import Link from "next/link";
-import { login } from "@/actions/auth/login";
 import { logout } from "@/actions/auth/logout";
-import { SubmitButton } from "./SubmitButton";
+
 import { UserAvatar } from "./UserAvatar";
 import { Suspense } from "react";
 
@@ -12,17 +11,16 @@ export default async function Navbar() {
   return (
     <header className="p-5 bg-blue-950 text-blue-300">
       <div className="flex items-center justify-between">
-        <h1>My App</h1>
+        <Link href="/">
+          <h1>My App</h1>
+        </Link>
         <nav className="flex gap-5 items-center">
           <Link href="/">Home</Link>
-          <Link href="/auth/dashboard">Dashboard</Link>
 
-          <div className="border-l border-blue-600 pl-5">
-            {!session ? (
-              <form action={login}>
-                <SubmitButton label="Sign In" loadingLabel="Signing in..." />
-              </form>
-            ) : (
+          {session ? (
+            <>
+              <Link href="/dashboard">Dashboard</Link>
+              <Link href="/posts">Posts</Link>
               <div className="flex items-center gap-3">
                 <Suspense
                   fallback={
@@ -45,8 +43,10 @@ export default async function Navbar() {
                   </form>
                 </div>
               </div>
-            )}
-          </div>
+            </>
+          ) : (
+            <Link href="/auth/signin">Sign in</Link>
+          )}
         </nav>
       </div>
     </header>
